@@ -5,6 +5,11 @@
 outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 startproject "Sandbox"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Umber/vendor/glfw/include"
+
+include "Umber/vendor/gflw"
+
 project "Umber"
     location "Umber"
     kind "SharedLib"
@@ -18,14 +23,21 @@ project "Umber"
     
     files 
     {
-        "%{prj.name}/src/**.h\",
+        "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp"
     }
     
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+    
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
     
     filter "system:windows"
