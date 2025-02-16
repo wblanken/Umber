@@ -2,8 +2,8 @@
 
 // For use by Umber applications
 
-#include <stdio.h>
 #include "Umber/Application.h"
+#include "Umber/Log.h"
 
 // ---------- Entry Point ----------
 #include "Umber/EntryPoint.h"

@@ -44,12 +44,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)\bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)\bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)\bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -58,6 +58,8 @@
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Umber/vendor/spdlog/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>      
+      <AdditionalOptions>/utf-8</AdditionalOptions>      
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -73,6 +75,8 @@
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Umber/vendor/spdlog/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>      
+      <AdditionalOptions>/utf-8</AdditionalOptions>      
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,15 +84,17 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="src\Umber\Application.cpp" />
-    <ClCompile Include="src\Umber\Application.h" />
-    <ClCompile Include="src\Umber\Core.h" />
-  </ItemGroup>
+  </ItemDefinitionGroup>  
   <ItemGroup>
     <ClInclude Include="src\Umber.h" />
     <ClInclude Include="src\Umber\EntryPoint.h" />
+    <ClInclude Include="src\Umber\Log.h" />
+    <ClInclude Include="src\Umber\Application.h" />
+    <ClInclude Include="src\Umber\Core.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Umber\Application.cpp" />
+    <ClCompile Include="src\Umber\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

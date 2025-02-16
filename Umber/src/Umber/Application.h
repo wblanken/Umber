@@ -4,7 +4,7 @@
 
 namespace Umber
 {
-    class UM_API Application
+    class UMBER_API Application
     {
     public:
         Application();

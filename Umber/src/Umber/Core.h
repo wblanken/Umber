@@ -2,9 +2,9 @@
 
 #ifdef UM_PLATFORM_WINDOWS
 	#ifdef UM_BUILD_DLL
-		#define UM_API __declspec(dllexport)
+		#define UMBER_API __declspec(dllexport)
 	#else
-		#define UM_API __declspec(dllimport)
+		#define UMBER_API __declspec(dllimport)
 	#endif
 #else
 	#error Umber only supports Windows!

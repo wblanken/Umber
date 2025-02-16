@@ -6,7 +6,10 @@ extern Umber::Application* Umber::CreateApplication();
 
 int main(int argc, char** argv)
 {
-    printf("Welcome to Umber Engine!\n");
+    Umber::Log::Init();
+    UM_CORE_WARN("Initialed Log");    
+    UM_INFO("Initialed Client Log");    
+    
     auto app = Umber::CreateApplication();
     app->Run();
     delete app;
