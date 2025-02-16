@@ -1,14 +1,15 @@
 ﻿#pragma once
 
 #include "Core.h"
+#include "Events/Event.h"
 
 namespace Umber
 {
     class UMBER_API Application
     {
     public:
-        Application();
-        virtual ~Application();
+        Application() = default;
+        virtual ~Application() = default;
 
         void Run();       
     };

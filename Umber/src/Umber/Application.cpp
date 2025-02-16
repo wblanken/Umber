@@ -1,17 +1,12 @@
 ﻿#include "Application.h"
 
+#include "Umber/Events/ApplicationEvent.h"
+#include "Umber/Log.h"
+
 namespace Umber
 {
-    Application::Application()
-    {
-    }
-
-    Application::~Application()
-    {
-    }
-
     void Application::Run()
-    {
-        while (true){}
+    {        
+        while (true);
     }
 }

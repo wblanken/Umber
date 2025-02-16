@@ -1,36 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Umber">
+      <UniqueIdentifier>{A0963E0E-0CAB-66BF-D52C-0A1F410063F0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Umber\Events">
+      <UniqueIdentifier>{848ED4E3-70F1-6388-1977-9C3E05B92F0B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Umber.h" />
+    <ClInclude Include="src\Umber\Application.h">
+      <Filter>Umber</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Core.h">
+      <Filter>Umber</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\EntryPoint.h">
+      <Filter>Umber</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Events\ApplicationEvent.h">
+      <Filter>Umber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Events\Event.h">
+      <Filter>Umber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Events\KeyEvent.h">
+      <Filter>Umber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Events\MouseEvent.h">
+      <Filter>Umber\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Umber\Log.h">
+      <Filter>Umber</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Umber\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Umber</Filter>
     </ClCompile>
-    <ClCompile Include="src\Umber\Application.h">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="src\Umber\Log.cpp">
+      <Filter>Umber</Filter>
     </ClCompile>
-    <ClCompile Include="src\Umber\Core.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Umber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Umber\EntryPoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

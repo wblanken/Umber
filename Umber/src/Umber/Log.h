@@ -1,8 +1,8 @@
 ﻿#pragma once
 
-#include <memory>
-#include "Core.h"
-#include "spdlog/spdlog.h"
+#include "Umber/Core.h"
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/fmt.h>
 
 namespace Umber
 {
