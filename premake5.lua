@@ -13,9 +13,12 @@ project "Umber"
     targetdir ("bin/" .. outdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outdir .. "/%{prj.name}")
     
+    pchheader "umpch.h"
+    pchsource "Umber/src/umpch.cpp"
+    
     files 
     {
-        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.h\",
         "%{prj.name}/src/**.cpp"
     }
     

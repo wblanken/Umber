@@ -1,8 +1,7 @@
 ﻿#pragma once
 
+#include "umpch.h"
 #include "Event.h"
-
-#include <sstream>
 
 namespace Umber
 {    

@@ -1,7 +1,6 @@
-﻿#include "Application.h"
+﻿#include "umpch.h"
 
-#include "Umber/Events/ApplicationEvent.h"
-#include "Umber/Log.h"
+#include "Application.h"
 
 namespace Umber
 {

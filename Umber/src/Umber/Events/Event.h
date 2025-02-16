@@ -1,9 +1,7 @@
 ﻿#pragma once
 
+#include "umpch.h"
 #include "Umber/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Umber
 {

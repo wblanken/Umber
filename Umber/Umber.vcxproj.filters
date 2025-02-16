@@ -34,6 +34,7 @@
     <ClInclude Include="src\Umber\Log.h">
       <Filter>Umber</Filter>
     </ClInclude>
+    <ClInclude Include="src\umpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Umber\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Umber\Log.cpp">
       <Filter>Umber</Filter>
     </ClCompile>
+    <ClCompile Include="src\umpch.cpp" />
   </ItemGroup>
 </Project>

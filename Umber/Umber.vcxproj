@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -99,7 +100,8 @@ IF EXIST ..\bin\Debug-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -126,7 +128,8 @@ IF EXIST ..\bin\Release-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bi
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -161,10 +164,14 @@ IF EXIST ..\bin\Dist-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\D
     <ClInclude Include="src\Umber\Events\KeyEvent.h" />
     <ClInclude Include="src\Umber\Events\MouseEvent.h" />
     <ClInclude Include="src\Umber\Log.h" />
+    <ClInclude Include="src\umpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Umber\Application.cpp" />
     <ClCompile Include="src\Umber\Log.cpp" />
+    <ClCompile Include="src\umpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
