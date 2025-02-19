@@ -11,3 +11,11 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#ifdef UM_ENABLE_ASSERTS
+	#define UM_ASSERT(x, ...) { if(!(x)) { UM_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define UM_CORE_ASSERT(x, ...) { if(!(x)) { UM_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define UM_ASSERT(x, ...)
+	#define UM_CORE_ASSERT(x, ...)
+#endif

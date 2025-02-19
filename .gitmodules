@@ -1,6 +1,6 @@
 [submodule "Umber/vendor/spdlog"]
 	path = Umber/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Umber/vendor/gflw"]
-	path = Umber/vendor/gflw
+[submodule "Umber/vendor/GFLW"]
+	path = Umber/vendor/GFLW
 	url = https://github.com/wblanken/glfw

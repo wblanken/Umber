@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_DEBUG;UM_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GFLW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -105,7 +105,7 @@ IF EXIST ..\bin\Debug-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\
       <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GFLW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -134,7 +134,7 @@ IF EXIST ..\bin\Release-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bi
       <PrecompiledHeaderFile>umpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>UM_PLATFORM_WINDOWS;UM_BUILD_DLL;UM_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GFLW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -158,6 +158,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\D
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\Win_Window.h" />
     <ClInclude Include="src\Umber.h" />
     <ClInclude Include="src\Umber\Application.h" />
     <ClInclude Include="src\Umber\Core.h" />
@@ -167,9 +168,11 @@ IF EXIST ..\bin\Dist-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\D
     <ClInclude Include="src\Umber\Events\KeyEvent.h" />
     <ClInclude Include="src\Umber\Events\MouseEvent.h" />
     <ClInclude Include="src\Umber\Log.h" />
+    <ClInclude Include="src\Umber\Window.h" />
     <ClInclude Include="src\umpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\Win_Window.cpp" />
     <ClCompile Include="src\Umber\Application.cpp" />
     <ClCompile Include="src\Umber\Log.cpp" />
     <ClCompile Include="src\umpch.cpp">
@@ -177,7 +180,7 @@ IF EXIST ..\bin\Dist-windows-x86_64\Umber\Umber.dll\ (xcopy /Q /E /Y /I ..\bin\D
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="vendor\gflw\GLFW.vcxproj">
+    <ProjectReference Include="vendor\GFLW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
   </ItemGroup>

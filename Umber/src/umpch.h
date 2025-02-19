@@ -10,6 +10,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Umber/Log.h"
+
 #ifdef UM_PLATFORM_WINDOWS
     #include <Windows.h>
 #endif

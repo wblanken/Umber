@@ -6,9 +6,9 @@ outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 startproject "Sandbox"
 
 IncludeDir = {}
-IncludeDir["GLFW"] = "Umber/vendor/glfw/include"
+IncludeDir["GLFW"] = "Umber/vendor/GFLW/include"
 
-include "Umber/vendor/gflw"
+include "Umber/vendor/GFLW/premake5.lua"
 
 project "Umber"
     location "Umber"
@@ -50,7 +50,7 @@ project "Umber"
         {
             "UM_PLATFORM_WINDOWS",
             "UM_BUILD_DLL"
-        }        
+        }
         
         postbuildcommands 
         { 
@@ -59,7 +59,7 @@ project "Umber"
         }
 
     filter "configurations:Debug"
-        defines { "UM_DEBUG" }
+        defines { "UM_DEBUG", "UM_ENABLE_ASSERTS" }
         symbols "On"
 
     filter "configurations:Release"
@@ -110,7 +110,7 @@ project "Sandbox"
         }        
 
     filter "configurations:Debug"
-        defines { "UM_DEBUG" }
+        defines { "UM_DEBUG", "UM_ENABLE_ASSERTS" }
         symbols "On"
 
     filter "configurations:Release"
